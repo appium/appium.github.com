@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Appium: Your Daily Mobile Automation Bread</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/appium.css" rel="stylesheet">
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+   <link rel="shortcut icon" href="ico/favicon.png">
+  </head>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+    
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">Appium</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="./index.html">Home</a>
+              </li>
+              <li class="active">
+                <a href="./getting-started.html">Get started</a>
+              </li>
+              <li class="">
+                <a href="./get-involved.html">Get Involved!</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>Getting started</h1>
+    <p class="lead">Want to rock your mobile app autmation? This is how you get started!</p>
+  </div>
+</header>
+
+
+  <div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li><a href="#requirements"><i class="icon-chevron-right"></i> Requirements</a></li>
+          <li><a href="#prerequisites"><i class="icon-chevron-right"></i> Prerequisites</a></li>
+          <li><a href="#quick-start"><i class="icon-chevron-right"></i> Quick start</a></li>
+          <li><a href="#low-level"><i class="icon-chevron-right"></i> Low-level things</a></li>
+        </ul>
+      </div>
+      <div class="span9">
+
+
+
+        <!-- Requirements
+        ================================================== -->
+        <section id="requirements">
+          <div class="page-header">
+            <h1>1. Requirements</h1>
+          </div>
+          <p class="lead">You'll need following tools to run appium locally.</p>
+<pre class="prettyprint">
+> Mac OS X 10.6 or higher
+> XCode
+> Apple Developer Tools (iPhone simulator, command line tools)
+</pre>
+
+      </section>
+
+        <!-- Prereqs
+        ================================================== -->
+        <section id="prerequisites">
+          <div class="page-header">
+            <h1>2. Prerequisites</h1>
+          </div>
+          <p class="lead">Install <a href="http://nodejs.org/">node.js</a> (includes npm, the node.js package manager).</p>
+          <p class="lead">From your local repo clone's command prompt, install these packages using the following commands:</p>
+<pre class="prettyprint">
+> sudo npm install -g mocha
+> sudo npm install -g grunt
+> npm install
+</pre>
+          <p>The first two commands install test and build tools (sudo may not be necessary if you installed node.js via Homebrew). The third command installs all app dependencies.</p>
+
+<p>To avoid a security dialog that may appear when launching your iOS apps you'll have to modify your <code>/etc/authorization</code> file in one of two ways:</p>
+
+<p>Manually modify the following element <code>&lt;allow-root&gt; under &lt;key&gt;system.privilege.taskport&lt;/key&gt;</code> in your <code>/etc/authorization</code> file to <code>&lt;true/&gt;</code>.</p>
+
+<p>Run the following grunt command which automatically modifies your <code>/etc/authorization</code> file for you:</p>
+<pre class="prettyprint">
+sudo grunt authorize
+</pre>
+<p>Important Note: Making this modification to your <code>/etc/authorization</code> file grants access privileges to all members belonging to your <code>_developer</code> group.</p>
+        </section>
+
+
+        <section id="quick-start">
+          <div class="page-header">
+            <h1>3. Quick start</h1>
+          </div>
+          <p class="lead">Download UICatalog example app</p>
+<pre class="prettyprint">
+> grunt downloadApp
+</pre>
+          <p>Build an app (if the functional tests fail, try running these grunt commands again):</p>
+<pre class="prettyprint">
+> grunt buildApp:UICatalog
+> grunt buildApp:TestApp
+</pre>   
+          <p>Run all functional tests:</p>
+<pre class="prettyprint">
+> grunt functional
+</pre>
+          <p>Run unit tests:</p>
+<pre class="prettyprint">
+> grunt unit
+</pre>
+
+          <p>Run all tests:</p>
+<pre class="prettyprint">
+> grunt test
+</pre> 
+
+          <p>Before committing code, please run grunt to execute some basic tests and check your changes against code quality standards:</p>
+<pre class="prettyprint">
+> grunt
+Running "lint:all" (lint) task
+Lint free.
+
+Done, without errors.
+</pre> 
+        </section>
+
+
+
+        <section id="low-level">
+          <div class="page-header">
+            <h1>4. More Stuff and Some Low-Level Tips</h1>
+          </div>
+          <p class="lead">If you want to run the Appium server and have it listen indefinitely, you can execute one of the following commands to start an Appium server with or without a specified app:</p>
+<pre class="prettyprint">
+> grunt appium           // launch Appium server without app
+> grunt appium:TestApp   // launch Appium server with the TestApp
+> grunt appium:UICatalog // launch Appium server with the UICatalog app
+</pre>
+          <p>Then you can run individual test files using Mocha, for example:</p>
+<pre class="prettyprint">
+> mocha -t 60000 -R spec test/functional/testapp/simple.js
+</pre>   
+          <p>Do you like getting close to the metal? Or are you trying to launch an Appium server from a script with a custom app? If so you can start Appium without grunt from the command line with an app or without an app. (See <a href="https://github.com/appium/appium/blob/master/app/parser.js">parser.js</a> for more CLI arguments.)</p>
+<pre class="prettyprint">
+> node server.js -V 1  // launch Appium server without app
+> node server.js --app /absolute/path/to/app -V 1  // launch Appium server with app
+</pre>
+          <p>In this case, the app has to be compiled for the iPhone simulator, for example by executing the following command in the Xcode project:</p>
+<pre class="prettyprint">
+> xcodebuild -sdk iphonesimulator6.0
+</pre>
+
+          <p>This creates a <code>build/Release-iphonesimulator directory</code> in your Xcode project that contains the .app package that you'll need to communicate with the Appium server.</p>
+
+        </section>
+      </div>
+    </div>
+  </div>
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p>We're open for discussion and would love to hear your voice in the discussion about the future of mobile apps testing!</p>
+        <ul class="footer-links">
+          <li><a href="https://groups.google.com/d/forum/appium-discuss">Discussion Group</a></li>
+          <li><a href="https://github.com/appium/appium/issues">Issues</a></li>
+          <li><a href="http://freenode.net">#appium @ freenode</a></li>
+        </ul>
+      </div>
+    </footer>
+
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-affix.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
