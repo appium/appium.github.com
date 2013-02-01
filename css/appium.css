@@ -13,6 +13,7 @@ color: #fff;
 font-size: 40px;
 font-weight: 200;
 line-height: 1.25;
+position: relative;
 }
 
 .masthead p.small{
