@@ -68,9 +68,10 @@
     <div class="row">
       <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
-          <li><a href="#requirements"><i class="icon-chevron-right"></i> Requirements</a></li>
-          <li><a href="#prerequisites"><i class="icon-chevron-right"></i> Prerequisites</a></li>
-          <li><a href="#quick-start"><i class="icon-chevron-right"></i> Quick start</a></li>
+          <li><a href="#requirements"><i class="icon-chevron-right"></i> System Requirements</a></li>
+          <li><a href="#user-quick-start"><i class="icon-chevron-right"></i> User Quick Start</a></li> 
+          <li><a href="#developing"><i class="icon-chevron-right"></i> Developing</a></li>
+          <li><a href="#running-tests"><i class="icon-chevron-right"></i> Running Tests</a></li>
           <li><a href="#low-level"><i class="icon-chevron-right"></i> Low-level things</a></li>
         </ul>
       </div>
@@ -82,24 +83,41 @@
         ================================================== -->
         <section id="requirements">
           <div class="page-header">
-            <h1>1. Requirements</h1>
+            <h1>1. System Requirements</h1>
           </div>
           <p class="lead">You'll need following tools to run appium locally.</p>
 <pre class="prettyprint">
-> Mac OS X 10.6 or higher
-> XCode
-> Apple Developer Tools (iPhone simulator, command line tools)
+ > Mac OS X 10.6 or higher
+ > XCode
+ > Apple Developer Tools (iPhone simulator, command line tools)
+ > Node and npm (<a href="http://www.nodejs.org">http://www.nodejs.org</a>)
 </pre>
-
       </section>
+
+        <!-- Requirements
+        ================================================== -->
+ <section id="user-quick-start">
+          <div class="page-header">
+            <h1>1. User Quick Start</h1>
+          </div>
+          <p class="lead">Get something working with a quickness.</p>
+<pre class="prettyprint">
+ > mkdir appium-test
+ > sudo npm install appium -g
+ > curl -O https://raw.github.com/appium/appium/master/sample-code/examples/node/simplest.js
+ > appium &
+ > node simpletest.js 
+</pre>
+        </section>
 
         <!-- Prereqs
         ================================================== -->
-        <section id="prerequisites">
+        <section id="developing">
           <div class="page-header">
-            <h1>2. Prerequisites</h1>
+            <h1>2. Developing on Appium</h1>
           </div>
           <p class="lead">Install <a href="http://nodejs.org/">node.js</a> (includes npm, the node.js package manager).</p>
+          <p class="lead">Fork the Appium repo ( <a href="https://github.com/appium/appium">https://github.com/appium/appium</a> ), then clone your fork.</p>
           <p class="lead">From your local repo clone's command prompt, install these packages using the following commands:</p>
 <pre class="prettyprint">
 > sudo npm install -g mocha
@@ -120,9 +138,9 @@ sudo grunt authorize
         </section>
 
 
-        <section id="quick-start">
+        <section id="running-tests">
           <div class="page-header">
-            <h1>3. Quick start</h1>
+            <h1>3. Running Tests</h1>
           </div>
           <p class="lead">Download UICatalog example app</p>
 <pre class="prettyprint">
