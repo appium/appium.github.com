@@ -316,6 +316,7 @@ border: 1px solid #e5e5e5;
   font-size: 52px;
   text-align: left;
   line-height: 121px;
+  margin-bottom: 0;
 }
 
 @media (min-width: 1200px){
@@ -354,4 +355,7 @@ border: 1px solid #e5e5e5;
     left: auto;
     right: 20px;
   }
+}
+.video-js{
+  margin: 0 auto 20px auto;
 }
