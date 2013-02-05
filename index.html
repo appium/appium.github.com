@@ -10,10 +10,24 @@
     <link href="css/appium.css" rel="stylesheet">
     <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
     <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+    <link href="css/dark-hive/jquery-ui-1.9.2.custom.css" rel="stylesheet">
     <script src="http://vjs.zencdn.net/c/video.js"></script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script src="js/jquery-1.8.3.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.js"></script>
+    <script>
+      var toggleVideo = function() {
+        var vid = $("#show-demo-video");
+        if (vid.css("display") == "none") {
+          vid.css("display","");
+        }
+        else {
+          vid.css("display","none");
+        }
+      };
+    </script>
 
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
@@ -92,14 +106,18 @@
   <div class="marketing">
 
     <h1 id="introducing-appium">Introducing Appium.</h1>
-    <video id="appium-everest-local" class="video-js vjs-default-skin" controls
-      preload="auto" width="595" height="363" poster="img/movie-preview.jpg"
-      data-setup="{}">
-      <source src="http://saucelabs.com/downloads/everest-local.mp4" type='video/mp4'>
-      <source src="http://saucelabs.com/downloads/everest-local.webm" type='video/webm'>
-        <source src="http://saucelabs.com/downloads/everest-local.ogv" type='video/ogg'>
-    </video>
     <p class="marketing-byline">Is native app automation missing from your tool belt? Problem solved.</p>
+    <h2><a href="javascript: toggleVideo()">Watch the Video</a></h2>
+    <div id="show-demo-video" style="display:none">
+      <video id="appium-everest-local" class="video-js vjs-default-skin" controls
+        preload="auto" width="595" height="363" poster="img/movie-preview.jpg"
+        data-setup="{}">
+        <source src="http://saucelabs.com/downloads/everest-local.mp4" type='video/mp4'>
+        <source src="http://saucelabs.com/downloads/everest-local.webm" type='video/webm'>
+        <source src="http://saucelabs.com/downloads/everest-local.ogv" type='video/ogg'>
+      </video>
+    </div>
+    <hr>
 
     <div class="row-fluid">
 
