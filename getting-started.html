@@ -207,10 +207,14 @@ Done, without errors.
 <pre class="prettyprint">
 > node server.js -V 1  // launch Appium server without app
 > node server.js --app /absolute/path/to/app -V 1  // launch Appium server with app
+> node server.js --launch 1 // pre-launch the app when appium loads
+> node server.js --log /my/appium.log // log to file instead of stdout
+> node server.js --warp 1 // use unsupported system-crashing speedup tech that warps time and space to make your tests fast
 </pre>
           <p>In this case, the app has to be compiled for the iPhone simulator, for example by executing the following command in the Xcode project:</p>
 <pre class="prettyprint">
 > xcodebuild -sdk iphonesimulator6.0
+> xcodebuild -sdk iphonesimulator6.1
 </pre>
 
           <p>This creates a <code>build/Release-iphonesimulator directory</code> in your Xcode project that contains the .app package that you'll need to communicate with the Appium server.</p>
