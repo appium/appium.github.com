@@ -20,7 +20,7 @@
    <link rel="shortcut icon" href="ico/favicon.png">
   </head>
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
-    
+
 
     <!-- Navbar
     ================================================== -->
@@ -69,7 +69,7 @@
       <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
           <li><a href="#requirements"><i class="icon-chevron-right"></i> System Requirements</a></li>
-          <li><a href="#user-quick-start"><i class="icon-chevron-right"></i> User Quick Start</a></li> 
+          <li><a href="#user-quick-start"><i class="icon-chevron-right"></i> User Quick Start</a></li>
           <li><a href="#developing"><i class="icon-chevron-right"></i> Developing</a></li>
           <li><a href="#running-tests"><i class="icon-chevron-right"></i> Running Tests</a></li>
           <li><a href="#low-level"><i class="icon-chevron-right"></i> Low-level things</a></li>
@@ -90,6 +90,7 @@
  > Mac OS X 10.6 or higher
  > XCode
  > Apple Developer Tools (iPhone simulator, command line tools)
+ > Android SDK API >= 17
  > Node and npm (<a href="http://www.nodejs.org">http://www.nodejs.org</a>)
 </pre>
       </section>
@@ -163,7 +164,7 @@ sudo grunt authorize
 <pre class="prettyprint">
 > grunt buildApp:UICatalog
 > grunt buildApp:TestApp
-</pre>   
+</pre>
           <p>Run all functional tests:</p>
 <pre class="prettyprint">
 > grunt functional
@@ -176,7 +177,7 @@ sudo grunt authorize
           <p>Run all tests:</p>
 <pre class="prettyprint">
 > grunt test
-</pre> 
+</pre>
 
           <p>Before committing code, please run grunt to execute some basic tests and check your changes against code quality standards:</p>
 <pre class="prettyprint">
@@ -185,7 +186,7 @@ Running "lint:all" (lint) task
 Lint free.
 
 Done, without errors.
-</pre> 
+</pre>
         </section>
 
 
@@ -203,7 +204,7 @@ Done, without errors.
           <p>Then you can run individual test files using Mocha, for example:</p>
 <pre class="prettyprint">
 > mocha -t 60000 -R spec test/functional/testapp/simple.js
-</pre>   
+</pre>
           <p>Do you like getting close to the metal? Or are you trying to launch an Appium server from a script with a custom app? If so you can start Appium without grunt from the command line with an app or without an app. (See <a href="https://github.com/appium/appium/blob/master/app/parser.js">parser.js</a> for more CLI arguments.)</p>
 <pre class="prettyprint">
 > node server.js -V 1  // launch Appium server without app
