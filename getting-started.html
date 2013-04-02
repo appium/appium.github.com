@@ -96,7 +96,7 @@ Requirements
 
 <pre class="prettyprint">> Mac OS X 10.6 or higher
 > XCode
-> Apple Developer Tools (iPhone simulator, command line tools)
+> Apple Developer Tools (iPhone simulator SDK, command line tools)
 > Android SDK API >= 17
 > Node and npm (http://www.nodejs.org) (Node must be >= v0.8)</pre>
 </section>
@@ -187,10 +187,15 @@ Install
 ), then clone your fork.From your local repo clone&#39;s command prompt, install these packages using the
 following commands:<pre class="prettyprint">> sudo npm install -g mocha
 > sudo npm install -g grunt-cli
-> npm install</pre>
+> ./reset.sh</pre>
 The first two commands install test and build tools (sudo may not be necessary
 if you installed node.js via Homebrew). The third command installs all app
-dependencies.</section>
+dependencies, builds supporting binaries and test apps. 
+
+<code>reset.sh</code>
+
+ is also the
+recommended command to run after pulling changes from master.</section>
 <section id="developing-on-appium-ios">
 <h2>
 <a href="#developing-on-appium-ios" class="anchor" name="requirements">
@@ -320,7 +325,8 @@ grunt from the command line with an app or without an app, among other things:<p
 > node server.js --app /absolute/path/to/app -V  // launch Appium server with app
 > node server.js --launch // pre-launch the app when appium loads
 > node server.js --log /my/appium.log // log to file instead of stdout
-> node server.js --warp // use unsupported system-crashing speedup tech</pre>
+> node server.js --without-delay // (iOS) use faster instruments-without-delay
+> node server.js --fast-reset // (Android) faster resetting between tests</pre>
 (See
 
 
